@@ -20,7 +20,8 @@ const logs = require('./api/logs');
 const connectDB = async () => {
     await mongoose.connect(process.env.ATLAS_URI, {
         useUnifiedTopology: true,
-        useNewUrlParser: true
+        useNewUrlParser: true,
+        useCreateIndex:true,
     });
     console.log('db connected');
 };
