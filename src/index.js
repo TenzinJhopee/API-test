@@ -12,19 +12,8 @@ const middlewares = require('./middleware');
 const logs = require('./api/logs');
 
 
-// mongoose.connect(process.env.ATLAS_URI, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true 
-// });
-// mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
-const connectDB = async () => {
-    await mongoose.connect(process.env.ATLAS_URI, {
-        useUnifiedTopology: true,
-        useNewUrlParser: true,
-        useCreateIndex:true,
-    });
-    console.log('db connected');
-};
+mongoose.connect("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
+
 
 // Connection problem mongoose error fix tomorrow
 
