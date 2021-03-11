@@ -14,7 +14,6 @@ const logs = require('./api/logs');
 
 mongoose.connect("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
 
-
 // Connection problem mongoose error fix tomorrow
 
 const app = express();
