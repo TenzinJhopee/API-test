@@ -4,10 +4,14 @@ const LogEntry = require('../models/LogEntry');
 
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.json({
-        message: 'Earth',
-    });
+
+router.get('/', async (req, res) => {
+   try {
+       const entries = await LogEntry.find();
+       res.json(entries);
+   } catch(error) {
+       next(error);
+   }
 });
 
 
